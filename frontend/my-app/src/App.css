@@ -1,0 +1,131 @@
+/* src/App.css */
+
+/* --- Font Import & Global Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --vppcoe-primary: rgba(122, 105, 139, 1);
+  --vppcoe-secondary: rgba(225, 197, 183, 1);
+  --vppcoe-accent: rgba(196, 167, 161, 1);
+  --color-background: #F8F7F9;
+  --color-surface: #FFFFFF;
+  --color-text: #333;
+  --color-text-muted: #6c757d;
+  --color-border: #EAE6EB;
+  --sidebar-width: 260px;
+  --header-height: 70px;
+  --border-radius: 12px;
+}
+
+/* --- Base Styles --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--color-background); }
+
+/* --- Main App Layout --- */
+.app-container { display: flex; }
+.main-view {
+  flex-grow: 1;
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: var(--sidebar-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 2.5rem 1.5rem; /* Adjusted padding for a cleaner look */
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Increased gap */
+}
+
+.sidebar-nav-link {
+  display: flex; /* Aligns icon and text */
+  align-items: center;
+  gap: 0.8rem; /* Space between icon and text */
+  padding: 0.8rem 1.2rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav-link:hover {
+  background-color: #F8F7F9;
+  color: var(--vppcoe-primary);
+}
+
+.sidebar-nav-link.active {
+  background-color: var(--vppcoe-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* --- Header --- */
+.app-header {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between; /* Positions items at ends */
+  align-items: center;
+  padding: 0 2rem;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title-group img {
+  height: 40px;
+}
+
+.header-title-text h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--vppcoe-primary);
+  line-height: 1.2;
+}
+
+.header-title-text p {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.logout-button {
+  display: flex; /* Aligns icon and text */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+  padding: 0.6rem 1.2rem;
+  background-color: #e44d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #c73a3a;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  padding: 2rem;
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+}

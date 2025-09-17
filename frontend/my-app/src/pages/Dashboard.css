@@ -1,0 +1,245 @@
+/* src/Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.welcome-banner {
+  background-color: var(--vppcoe-secondary);
+  color: #5a4b45; /* Darker text for readability on the light background */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+.welcome-banner h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.profile-card, .stat-card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-card .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--vppcoe-accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-card .avatar svg {
+  color: white;
+}
+
+.profile-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profile-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* --- CORRECTED STAT CARD STYLES --- */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card:nth-child(2) .stat-icon-wrapper { background-color: rgba(122, 105, 139, 0.1); }
+.stat-card:nth-child(3) .stat-icon-wrapper { background-color: rgba(40, 167, 69, 0.1); }
+.stat-card:nth-child(4) .stat-icon-wrapper { background-color: rgba(251, 192, 45, 0.1); }
+
+.stat-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--vppcoe-primary);
+  margin-top: 0;
+}
+
+.stat-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+}
+
+/* --- CORRECTED CARD TITLE STYLES --- */
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-title svg {
+  color: var(--vppcoe-primary);
+}
+
+
+.todo-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.todo-input-group input {
+  flex-grow: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+.todo-input-group button {
+  background-color: var(--vppcoe-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 0.8rem;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+.todo-list li:last-child {
+  border-bottom: none;
+}
+.todo-list span {
+  flex-grow: 1;
+}
+
+.todo-check, .todo-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+.todo-check:hover { color: #28a745; }
+.todo-delete:hover { color: #dc3545; }
+.completed .todo-check { color: #28a745; }
+
+.focus-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.focus-item {
+  padding: 1rem;
+  background-color: #f8f7f9;
+  border-radius: 8px;
+}
+.focus-item h4 {
+  font-weight: 500;
+}
+.domain-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--vppcoe-accent);
+  color: #5a4b45;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.achievement-item {
+  padding: 0.8rem 1rem;
+  background-color: #e9f5ea; /* Light green */
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #216329;
+}
+.achievement-item:nth-child(2) {
+  background-color: #e7f3ff; /* Light blue */
+  color: #004a99;
+}
+.achievement-item:nth-child(3) {
+  background-color: #f3eaff; /* Light purple */
+  color: #562981;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .main-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .achievements-grid { grid-template-columns: 1fr; }
+}
